@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,6 +23,26 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+        </div>
+        <div class="setting">
+            <label>Character length</label>
+            <input type="number" id="length" min="8" max="128"/>
+        </div>
+        <div class="setting">
+            <label>Include special characters</label>
+            <input type="checkbox" id="special-characters" checked/>
+        </div>
+        <div class="setting">
+            <label>Include numeric characters</label>
+            <input type="checkbox" id="numeric" checked>
+        </div>
+        <div class="setting">
+            <label>Include uppercase characters</label>
+            <input type="checkbox" id="uppercase" checked>
+        </div>
+        <div class="setting">
+            <label>Include uppercase characters</label>
+            <input type="checkbox" id="lowercase" checked>
         </div>
         <div class="card-footer">
           <button id="generate" class="btn">Generate Password</button>

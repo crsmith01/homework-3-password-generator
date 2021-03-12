@@ -11,7 +11,7 @@ SO THAT I can create a strong password that provides greater security
 ## Acceptance Criteria
 
 ```
-GIVEN I need a new, secure password
+GIVEN I need a new, secure password:
 1. WHEN I click the button to generate a password,
     THEN I am presented with a series of prompts for password criteria.
 2. WHEN prompted for password criteria,
@@ -26,6 +26,9 @@ GIVEN I need a new, secure password
     THEN a password is generated that matches the selected criteria.
 7. WHEN the password is generated,
     THEN the password is either displayed in an alert or written to the page.
+```
+Note: I altered the HTML to be present a more practical user interface, wherein, instead of clicking “OK” or “Cancel” in a series of window confirm methods to determine what type of components they want in a password, users can uncheck a checkbox if they do not wish to include special characters (symbols), numbers, uppercase letters, or lowercase letters in their randomly generated password.
+
 ```
 
 ## Mock-Up

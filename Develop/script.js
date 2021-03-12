@@ -1,11 +1,13 @@
 // Assignment Code
 // DOM elements
-var generateBtn = document.querySelector("#generate");
+// var generateBtn = document.querySelector("#generate");
+var generateEl = document.querySelector("#generate");
 var lengthEl = document.getElementById("#length");
 var symbolEl = document.getElementById("#symbol");
 var numericEl = document.getElementById("#numeric");
 var uppercaseEl = document.getElementById("#uppercase");
 var lowercaseEl = document.getElementById("#lowercase");
+var passwordEl = document.getElementById("#password");
 
 // Write password to the #password input
 function writePassword() {
@@ -18,29 +20,38 @@ function writePassword() {
 
 
 
-// 1 event, which is clicking the "Generate Password" button. Need a clickevent
-generate.addEventListener("click", function() {
-  var length = +lengthEl.value;
-  var hasSymbol = symbolsEl.checked;
-  var hasNumeric = numericEl.checked;
-  var hasUpper = uppercaseEl.checked;
-  var hasLower = lowercaseEl.checked;
+// Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, upper, and lower as the key. Filtering out if it's unchecked
+
+function generatePassword(symbols, numeric, upper, lower, legnth) {
+  ver generatePassword = " ";
+  var typesCount = symbol + numeric + upper + lower;
+	var typesArr = [{numeric}, {upper}, {lower}, {symbol}].filter(item function() Object.values(item)[0]);
 }
 
-console.log(hasUpper, hasLower, hasSymbol, hasNumeric);
+// if user unchecks all boxes so there are no selected types, return an empty string
+  if (typesCount === 0) {
+    return "";
+  }
+// create a loop to generate each character for each type
+  for (i=0; i<length; i+=typesCount) {
+    typesArr.forEach(type => {
+        var funcName = Object.keys(type)[0];
+        generatePassword =+ randomFunc[funcName]();
+    });
+}
 
 
-// creating an object for the 4 functions below
+// creating an object for the 4 functions below - keys used later
 var randomFunc = {
-  symbols = getRandomSymbol
-  numeric = getRandomNumber
-  uppercase = getRandomUpper
-  lowercase = getRandomLower
+  symbols: getRandomSymbol
+  numeric: getRandomNumber
+  uppercase: getRandomUpper
+  lowercase: getRandomLower
 }
 
 
 // Password generator functions - using https://www.w3schools.com/html/html_charset.asp
-// using Math.floor method to round down
+// using Math.floor method to round down since we don't want decimals
 
 // can get a character in a string like in an array
 function getRandomSymbol() {
@@ -70,3 +81,15 @@ function getRandomLower() [
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+// 1 event, which is clicking the "Generate Password" button. Need a clickevent
+generateBtn.addEventListener("click", function() {
+  var length = +lengthEl.value;
+  var hasSymbol = symbolsEl.checked;
+  var hasNumeric = numericEl.checked;
+  var hasUpper = uppercaseEl.checked;
+  var hasLower = lowercaseEl.checked;
+
+  passwordEl.innerText = writePassword(hasUpper, hasLower, hasSymbol, hasNumeric, length);
+});
+

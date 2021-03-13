@@ -33,17 +33,7 @@ generateBtn.addEventListener("click", () => {
 });
 
 
-
-// Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector("#password");
-
-//   passwordText.value = password;
-
-// }
-
-// STILL TO DO: create alerts to say what to do
+// Created alert to say what to do.
 window.alert("How many characters would you like your password to be? Type or use the up or down arrows. Then uncheck a box if you do not want those types of characters included in your password.");
 
 // Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, uppercase, and lowercase as the key. Filtering out if it's unchecked
@@ -54,14 +44,14 @@ function writePassword(symbols, numeric, uppercase, lowercase, length) {
   var typesCount = symbols + numeric + uppercase + lowercase;
 	var typesArr = [{symbols}, {numeric}, {uppercase}, {lowercase}].filter(item => Object.values(item)[0]);
 
-  // If user unchecks all boxes so there are no selected types, return an alert for minimum length
+  // If user unchecks all boxes so there are no selected types, return an alert for minimum length.
   if (typesCount === 0) {
     window.alert("Password must contain at least 8 characters.");
     return;
   }
 
   // Created a loop to generate each character for each type (type being numeric, symbol, lowercase and uppercase)
-  for (i = 0; i < length; i += typesCount) {
+  for (var i = 0; i < length; i += typesCount) {
     typesArr.forEach(type => {
         var funcName = Object.keys(type)[0];
         generatedPassword += randomFunc[funcName]();

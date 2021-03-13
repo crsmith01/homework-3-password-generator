@@ -12,7 +12,7 @@ var generateBtn = document.querySelector("#generate");
 
 
 
-// creating an object for the 4 functions at the bottom - keys used later
+// Created an object for the 4 functions at the bottom of the js file - keys used later
 var randomFunc = {
   symbols: getRandomSymbol,
   numeric: getRandomNumber,
@@ -22,9 +22,6 @@ var randomFunc = {
 
 
 // Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
-
-// 1 event, which is clicking the "Generate Password" button. Need a clickevent
 generateBtn.addEventListener("click", () => {
   var length = +lengthEl.value;
   var hasSymbol = symbolsEl.checked;

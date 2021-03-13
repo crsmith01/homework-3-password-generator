@@ -44,19 +44,20 @@ generateBtn.addEventListener("click", () => {
 // }
 
 // STILL TO DO: create alerts to say what to do
-// window.alert("How many characters would you like your password to be? Type or use the up or down arrows. Then uncheck a box if you do not want those types of characters included in your password.");
+window.alert("How many characters would you like your password to be? Type or use the up or down arrows. Then uncheck a box if you do not want those types of characters included in your password.");
 
-// Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, upper, and lower as the key. Filtering out if it's unchecked
+// Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, uppercase, and lowercase as the key. Filtering out if it's unchecked
 
 function writePassword(symbols, numeric, uppercase, lowercase, length) {
-  var generatedPassword = " ";
+  var generatedPassword = "";
   // ^^^or set it to have an alert that says you must select something
   var typesCount = symbols + numeric + uppercase + lowercase;
 	var typesArr = [{symbols}, {numeric}, {uppercase}, {lowercase}].filter(item => Object.values(item)[0]);
 
   // If user unchecks all boxes so there are no selected types, return an alert for minimum length
   if (typesCount === 0) {
-    return window.alert("Password must contain at least 8 characters.");
+    window.alert("Password must contain at least 8 characters.");
+    return;
   }
 
   // Created a loop to generate each character for each type (type being numeric, symbol, lowercase and uppercase)
@@ -85,7 +86,7 @@ function getRandomSymbol() {
 
 // 10 possible digits (0-9) - 48-57 in CharCode
 function getRandomNumber() {
-  return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+  return +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
 }
 
 // 26 letters of the alphabet - Uppercase letters are 65 to 90 in CharCode

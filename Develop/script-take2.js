@@ -1,4 +1,4 @@
-// Can I just use variable intstead of constant? since that's what we've learned so far
+// Can I just use variable instead of constant? since that's what we've learned so far
 const resultEl = document.getElementById('result');
 const lengthEl = document.getElementById('length');
 const uppercaseEl = document.getElementById('uppercase');
@@ -6,6 +6,9 @@ const lowercaseEl = document.getElementById('lowercase');
 const numbersEl = document.getElementById('numbers');
 const symbolsEl = document.getElementById('symbols');
 const generateEl = document.getElementById('generate');
+
+// #result here is #password in mine
+// var generateEl is var generateBtn in mine
 
 const randomFunc = {
 	lower: getRandomLower,
@@ -23,6 +26,8 @@ generate.addEventListener('click', () => {
 	
 	resultEl.innerText = generatePassword(hasLower, hasUpper, hasNumber, hasSymbol, length);
 });
+
+// function generatePassword here is writePassword in mine
 
 function generatePassword(lower, upper, number, symbol, length) {
 	let generatedPassword = '';
@@ -63,3 +68,4 @@ function getRandomSymbol() {
 	const symbols = '!@#$%^&*(){}[]=<>/,.'
 	return symbols[Math.floor(Math.random() * symbols.length)];
 }
+

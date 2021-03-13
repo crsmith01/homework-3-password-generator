@@ -23,7 +23,7 @@ var randomFunc = {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", () => {
-  var length = +lengthEl.value;
+  var length = +lengthEl.value.trim();
   var hasSymbol = symbolsEl.checked;
   var hasNumeric = numericEl.checked;
   var hasUpper = uppercaseEl.checked;
@@ -54,9 +54,9 @@ function writePassword(symbols, numeric, uppercase, lowercase, length) {
   var typesCount = symbols + numeric + uppercase + lowercase;
 	var typesArr = [{symbols}, {numeric}, {uppercase}, {lowercase}].filter(item => Object.values(item)[0]);
 
-  // If user unchecks all boxes so there are no selected types, return an empty string
+  // If user unchecks all boxes so there are no selected types, return an alert for minimum length
   if (typesCount === 0) {
-    return "";
+    return window.alert("Password must contain at least 8 characters.");
   }
 
   // Created a loop to generate each character for each type (type being numeric, symbol, lowercase and uppercase)

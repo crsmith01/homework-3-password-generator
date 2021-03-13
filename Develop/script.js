@@ -9,36 +9,6 @@ var uppercaseEl = document.getElementById("#uppercase");
 var lowercaseEl = document.getElementById("#lowercase");
 var passwordEl = document.getElementById("#password");
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-
-
-// Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, upper, and lower as the key. Filtering out if it's unchecked
-
-function generatePassword(symbols, numeric, upper, lower, legnth) {
-  ver generatePassword = " ";
-  var typesCount = symbol + numeric + upper + lower;
-	var typesArr = [{numeric}, {upper}, {lower}, {symbol}].filter(item function() Object.values(item)[0]);
-}
-
-// if user unchecks all boxes so there are no selected types, return an empty string
-  if (typesCount === 0) {
-    return "";
-  }
-// create a loop to generate each character for each type
-  for (i=0; i<length; i+=typesCount) {
-    typesArr.forEach(type => {
-        var funcName = Object.keys(type)[0];
-        generatePassword =+ randomFunc[funcName]();
-    });
-}
 
 
 // creating an object for the 4 functions below - keys used later
@@ -48,6 +18,39 @@ var randomFunc = {
   uppercase: getRandomUpper
   lowercase: getRandomLower
 }
+
+// Write password to the #password input
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector("#password");
+
+  passwordText.value = password;
+
+}
+
+// STILL TO DO: create alerts to say what to do
+window.alert("How many characters would you like your password to be? Type or use the up or down arrows. Then uncheck a box if you do not want those types of characters included in your password.");
+
+// Generate password function. typesCount to count how many are checked off, typesArr for array. Want array of objects with symbols, numeric, upper, and lower as the key. Filtering out if it's unchecked
+
+function generatePassword(symbols, numeric, uppercase, lowercase, length) {
+  var generatePassword = " ";
+  var typesCount = symbols + numeric + uppercase + lowercase;
+	var typesArr = [{numeric}, {upper}, {lower}, {symbols}].filter(item function() Object.values(item)[0]);
+}
+
+  // if user unchecks all boxes so there are no selected types, return an empty string
+  if (typesCount === 0) {
+    return "";
+  }
+  // create a loop to generate each character for each type
+  for (i=0; i<length; i+=typesCount) {
+    typesArr.forEach(type => {
+        var funcName = Object.keys(type)[0];
+        generatePassword =+ randomFunc[funcName]();
+    });
+}
+
 
 
 // Password generator functions - using https://www.w3schools.com/html/html_charset.asp
@@ -90,6 +93,6 @@ generateBtn.addEventListener("click", function() {
   var hasUpper = uppercaseEl.checked;
   var hasLower = lowercaseEl.checked;
 
-  passwordEl.innerText = writePassword(hasUpper, hasLower, hasSymbol, hasNumeric, length);
+  passwordEl.innerText = writePassword(length, hasSymbol, hasNumeric, hasUpper, hasLower);
 });
 

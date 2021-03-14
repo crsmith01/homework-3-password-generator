@@ -27,16 +27,12 @@ GIVEN I need a new, secure password:
 7. WHEN the password is generated,
     THEN the password is either displayed in an alert or written to the page.
 ```
-Note: I altered the HTML to be present a more practical user interface, wherein, instead of clicking “OK” or “Cancel” in a series of window confirm methods to determine what type of components they want in a password, users can uncheck a checkbox if they do not wish to include special characters (symbols), numbers, uppercase letters, or lowercase letters in their randomly generated password.
+Note: I altered the HTML to present a more practical user interface, wherein, instead of clicking “OK” or “Cancel” in a series of window confirm methods to determine what type of components they want in a password, users can uncheck a checkbox if they do not wish to include special characters (symbols), numbers, uppercase letters, or lowercase letters in their randomly generated password. They can also type, use the arrows, or use the slidebar to indicate how long they want their password to be.
 
 ```
 
 ## Mock-Up
 
 The following images showcase the web application's appearance and functionality:
-
-INSERT SCREENSHOTS
-
-images/
-images/
-images/
+images/screenshot_alert.png
+images/screenshot/png

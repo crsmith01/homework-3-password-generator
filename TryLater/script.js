@@ -63,7 +63,7 @@ function writePassword(symbols, numeric, uppercase, lowercase, length) {
 
   // If user unchecks all boxes so there are no selected types, return an alert for minimum length.
   if (typesCount === 0) {
-    window.alert("Password must contain at least 8 characters.");
+    alert("Password must contain at least 8 characters.");
     return;
   }
 
@@ -94,7 +94,7 @@ function getRandomSymbol() {
 
 // 10 possible digits (0-9) - 48-57 in CharCode
 function getRandomNumber() {
-  return +String.fromCharCode(Math.floor(Math.random() * 10) + 48)
+  return String.fromCharCode(Math.floor(Math.random() * 10) + 48)
 }
 
 // 26 letters of the alphabet - Uppercase letters are 65 to 90 in CharCode

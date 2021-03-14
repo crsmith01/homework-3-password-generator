@@ -27,12 +27,20 @@ GIVEN I need a new, secure password:
 7. WHEN the password is generated,
     THEN the password is either displayed in an alert or written to the page.
 ```
-Note: I altered the HTML to present a more practical user interface, wherein, instead of clicking “OK” or “Cancel” in a series of window confirm methods to determine what type of components they want in a password, users can uncheck a checkbox if they do not wish to include special characters (symbols), numbers, uppercase letters, or lowercase letters in their randomly generated password. They can also type, use the arrows, or use the slidebar to indicate how long they want their password to be.
+Note: I tried altering the HTML to present a more practical user interface, wherein, instead of clicking “OK” or “Cancel” in a series of window confirm and/or prompt methods to determine what type of components they want in a password, users could uncheck a checkbox if they do not wish to include special characters (symbols), numbers, uppercase letters, or lowercase letters in their randomly generated password. They could also type, use the arrows, or use the slidebar to indicate how long they want their password to be.  However, I did not get a chance to finish debugging what was going wrong. This progress is saved in the TryLater file.  The code that works is found in the Develop and main folder.
 
 ```
 
-## Mock-Up
+## Mock Up
 
 The following images showcase the web application's appearance and functionality:
-images/screenshot_alert.png
-images/screenshot/png
+images/Screenshot1.png
+images/Screenshot2.png
+images/Screenshot3.png
+images/Screenshot4.png
+images/Screenshot5.png
+images/Screenshot6.png
+
+```
+
+## Link to deployed application

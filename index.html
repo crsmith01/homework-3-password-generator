@@ -24,12 +24,15 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        <!-- Added settings into html instead of as alerts/prompts/confirms in the js -->
         <div class="setting">
-            <label>Character length</label>
-            <input type="number" id="length" min="8" max="128"/>
+            <label>Character length (8-126)</label>
+            <input type="number" id="length" min="8" max="128" value="8"/>
+            <input type="range" id="length" min="8" max="128" value="8"/>
+            <!-- ^^set default values to 8 -->
         </div>
         <div class="setting">
-            <label>Include symbols (special characters)</label>
+            <label>Include special characters (symbols)</label>
             <input type="checkbox" id="symbols" checked/>
         </div>
         <div class="setting">

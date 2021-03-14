@@ -7,9 +7,7 @@ var symbolEl = document.getElementById("#symbol");
 var numericEl = document.getElementById("#numeric");
 var uppercaseEl = document.getElementById("#uppercase");
 var lowercaseEl = document.getElementById("#lowercase");
-var generateBtn = document.querySelector("#generate");
-
-
+var generateEl = document.querySelector("#generate");
 
 
 // Created an object for the 4 functions at the bottom of the js file - keys used later
@@ -20,11 +18,11 @@ var randomFunc = {
   lowercase: getRandomLower
 }
 
-
 // Add event listener to generate button
-generateBtn.addEventListener("click", () => {
+generateEl.addEventListener("click", () => {
   var length = +lengthEl.value.trim();
-  var hasSymbol = symbolsEl.checked;
+  // ^^ + to make it a number instead of a string
+  var hasSymbol = symbolEl.checked;
   var hasNumeric = numericEl.checked;
   var hasUpper = uppercaseEl.checked;
   var hasLower = lowercaseEl.checked;
@@ -42,7 +40,12 @@ function writePassword(symbols, numeric, uppercase, lowercase, length) {
   var generatedPassword = "";
   // ^^^or set it to have an alert that says you must select something
   var typesCount = symbols + numeric + uppercase + lowercase;
+  // console.log("typesCount: ", typesCount);
+  // ^^^typesCount is the number of checked boxes, and typesArr is the those values as an array
 	var typesArr = [{symbols}, {numeric}, {uppercase}, {lowercase}].filter(item => Object.values(item)[0]);
+  // ^^^filter method used to eliminate the falses (aka unchecked)
+  // console.log("typesArr: ", typesArr);
+
 
   // If user unchecks all boxes so there are no selected types, return an alert for minimum length.
   if (typesCount === 0) {
@@ -50,23 +53,24 @@ function writePassword(symbols, numeric, uppercase, lowercase, length) {
     return;
   }
 
-  // Created a loop to generate each character for each type (type being numeric, symbol, lowercase and uppercase)
-  for (var i = 0; i < length; i += typesCount) {
+  // Created a loop to generate each character for each type (type being numeric, symbol, lowercase and uppercase). Using keys of var randomFunc. += to append on to the generatedPassword function
+  for (let i = 0; i < length; i += typesCount) {
     typesArr.forEach(type => {
         var funcName = Object.keys(type)[0];
+          // console.log("funcName: ", funcName);
         generatedPassword += randomFunc[funcName]();
     });
   }
 
+  // console.log(generatedPassword);
+
   var finalPassword = generatedPassword.slice(0, length);
 
-  return finalPassword;
+  return;
 }
 
-
-
 // Password generator functions - using https://www.w3schools.com/html/html_charset.asp
-// using Math.floor method to round down since we don't want decimals
+// Using Math.floor method to round down since we don't want decimals
 
 // can get a character in a string like in an array
 function getRandomSymbol() {

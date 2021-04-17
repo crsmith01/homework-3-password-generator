@@ -1,4 +1,9 @@
-# homework-3-password-generator
+# Homework 3: Password Generator
+
+## Technologies Used:
+HTML
+CSS
+JavaScript
 
 ## User Story
 
@@ -34,7 +39,7 @@ Note: I tried altering the HTML to present a more practical user interface, wher
 ## Mock Up
 
 The following images showcase the web application's appearance and functionality:
-images/Screenshot1.png
+![screenshot](./images/Screenshot1.png)
 images/Screenshot2.png
 images/Screenshot3.png
 images/Screenshot4.png
@@ -44,4 +49,8 @@ images/Screenshot6.png
 ```
 
 ## Link to deployed application
-https://crsmith01.github.io/homework-3-password-generator/.
+[link] (https://crsmith01.github.io/homework-3-password-generator/)
+
+
+### Brought to you by:
+* [Catherine Smith](https://github.com/crsmith01)

@@ -47,7 +47,7 @@ The following images showcase the web application's appearance and functionality
 ```
 
 ## Link to deployed application
-[Deplpoyed application](https://crsmith01.github.io/homework-3-password-generator/)
+[Deployed application](https://crsmith01.github.io/homework-3-password-generator/)
 
 
 ### Contact:
